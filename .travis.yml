@@ -1,0 +1,16 @@
+language: node_js
+script: npm test
+node_js:
+- node
+- '0.12'
+notifications:
+  email: false
+deploy:
+  provider: npm
+  email: npm@eli-white.com
+  api_key:
+    secure: FBOXZzJs1B0pKfeuHkiHLqba4a1WxIYTfYYGOm28zO2zC9ET/xUWW5xX7SWqCDeSYTFIa3fTUBJ8f+2BKMiVmPETla36ZcA6OK6Zt1wyp1dVcxlzcOQtwH21hDPEIv8Hk56N2IDqMQ4sCz2eO1Dftnq2edyeKxfdOWH+fGkrYlsdH8c6jV3pgimHAZsRF+1zxlL0cJZXvsFm1orLI2NyjFp/WpR0q5Lh2PednEmm9DQdDfCwt6NF5bT6c6doJvL6Q9DYUIF6CLAAacSiPEbdd40tp2Gh15zCMXu/0L9MLaAtzNo1rPaJ9tkvtzBjoOO35GZMWz22AvCd28P+MQ8cgHdCnm/kdzklMf7Xn0ZDs5nvkA2IajSp5obpFcNjfKYRTACdsQpYwatXTmT5KtvM/y1TbZQTGbQvxr4xcN3vDaasBk4cRsPxIPaMRPZAEXjQjGkOFqUZyAWDzUcZMRgLN85MGdGg9l7kILXb+3OeKamizo/qN+KC04LVp44XPJmId97cro677nSWkEeKwa9cRUlrHLqSHXV/3GnHPf47puHwTuFPymy/JekxiRTT6SUFOiBI0pbPi4VlCUOcCHWsCJO/vLFIOZxZ44kIdktLcwrr9FMWAGscP5jOwJy4ChWO2+ap3a5oqqlF/gcPOQk26qIr8d8Mj3Y8vufBwc1A4Kg=
+  on:
+    tags: true
+    repo: thesavior/find-parent
+    node: '0.12'
