@@ -1,8 +1,9 @@
 {
   "name": "find-parent",
   "version": "1.0.0",
-  "description": "A utility for finding the nearest parent that matches a test functino",
+  "description": "A utility for finding the nearest parent that matches a test function",
   "main": "index.js",
+  "files": ["index.js"],
   "scripts": {
     "test": "mocha"
   },
