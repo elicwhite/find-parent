@@ -1,0 +1,30 @@
+{
+  "name": "find-parent",
+  "version": "1.0.0",
+  "description": "A utility for finding the nearest parent that matches a test functino",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "devDependencies": {
+    "chai": "3.2.0",
+    "jsdom": "3.1.2",
+    "mocha": "2.2.5"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TheSavior/find-parent.git"
+  },
+  "keywords": [
+    "find-parent",
+    "dom",
+    "parent",
+    "event"
+  ],
+  "author": "Eli White <github@eli-white.com> (http://eli-white.com)",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/TheSavior/find-parent/issues"
+  },
+  "homepage": "https://github.com/TheSavior/find-parent#readme"
+}

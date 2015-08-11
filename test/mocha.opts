@@ -1,0 +1,3 @@
+test/src-tests/**/*.js
+-R dot
+-u bdd
