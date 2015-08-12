@@ -7,12 +7,15 @@
     "index.js"
   ],
   "scripts": {
-    "test": "mocha"
+    "test": "eslint . && jscs . && mocha"
   },
   "devDependencies": {
     "chai": "3.2.0",
+    "eslint": "1.1.0",
+    "jscs": "2.1.0",
     "jsdom": "3.1.2",
-    "mocha": "2.2.5"
+    "mocha": "2.2.5",
+    "wealthfront-javascript": "^2.3.0"
   },
   "repository": {
     "type": "git",
