@@ -8,18 +8,6 @@ var SAUCE_BROWSERS = {
     browserName: 'chrome'
   },
 
-  sl_firefox: {
-    base: 'SauceLabs',
-    browserName: 'firefox'
-  },
-
-  sl_ios_safari: {
-    base: 'SauceLabs',
-    browserName: 'iphone',
-    platform: 'OS X 10.9',
-    version: '7.1'
-  },
-
   sl_ie_11: {
     base: 'SauceLabs',
     browserName: 'internet explorer',
@@ -34,7 +22,7 @@ module.exports = function(config) {
   config.set({
     sauceLabs: {
       testName: 'find-parent tests',
-      tunnelIdentifier: process.env.TRAVIS_JOB_NUMBER
+      startConnect: true
     },
 
     customLaunchers: SAUCE_BROWSERS,

@@ -13,7 +13,7 @@ module.exports = {
 
   singleRun: true,
 
-  logLevel: 'error',
+  logLevel: 'info',
 
   browserify: {
     debug: true
