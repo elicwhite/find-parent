@@ -1,8 +1,11 @@
 language: node_js
-script: npm test
+script: npm run test-ci
 node_js:
 - node
-- '0.12'
+env:
+  global:
+    - secure: P2oT12FqZHtp8JNvHqbiU9pJKyR1xgnuBy22d3rPe7752uzwtGQ/ysp83uDhEZNV0o4ty77RXOQkF6wJcazEcxxXmjtJiR5M38HCs3EvWKuMj722HaX7Ap5Iw52MEXdCfeigmOxT5xpuyziv0rWWqMhbgMOTtpFlZXkRNKU+MQS7o+Fxyq0lfZ/xJ88FeEWwOwtovtlG1BD/ofT09ryouiYylYa/8bNocQ25Zmi49uwzDApZgo/yxJP+YOdDTxy+er0VbxXxj0UsEtuMRN04Fl8MHpCvn9SYv0omp4xO8VA2xniN+ZGpW8CRImGf/pk4iI4KxJak4SoPB/TLRbQzyTrNzDavh1e+E733TsYAdMiwCshOATCSK+oBJJ4ZDg61auLdrjeOxfvLwJlEM176fBBYCx3AuMa7/BFg05IvQSz9I6vXwYP1yNX/oW0WLj25jmq/49r4rSSRdXW19X9B+kgaGOWfeBpj/ZpVeToOKvNZVvIwex3inpOTLSoXKVMRK6Z6deiWP6XsJOTM3jkSsSZBCAWxd6MXiyPiptVPsvlhg6uPok0ATcUZWLdyn4+JVP9PXDqYoFBeeY6ePeDD/PZPPntqTfNRkpQIyZoxDMc1p+Ch8SMK+vKreJfxpIWnCGt+17Vv1OQb/CwAndgJObE8K1j59D+fCS5nITNQGiQ=
+    - secure: Kf7NWEJ/Qhi4tdU4yc3n0729eGZ+ZxkCuL9XQxQzu6o8dHhdrJ5YmDwRVV6TlzP5laGEXFXRapTdm/NXt41kUAouFnep/YxjHGmQZmWRpsQnPG/h1uoa36Q1gYksWRQor7N5VzpjUiKR1VHeX2qfhz5yAfXMPD7TKUnlbpGkdhp+wgyANoviIKNtnC6mfzmPVDmR77BUK6mnRy6U52nWJQB7vNqchKcDh4AcoopCBK1Cjbnc3lPsJfQiBpgFldctDFFT2n8CbFGDDp/SJvv5wLpzYwnDMHQXLSshcEC1gKSwLF8tzyD+PcouK+BMAHF20Jn93l+np2v09TdORZcvsvPF7/DmQNwjJ6PhtHWF/02RaF/zFEHl7vmdczt2CtzDk6kXHvLCqoElSpFrOCxUjgmmgSauEMi8EwB5ovTNYcJFF7+V7Kfg+Dj3WafYKBiKHfxOC3AXP2YG6HYSm1/6TDUHxVAP5lie5XhqN35LCy+WtoFMcs8HTWc+yoWiXYxSz5QYwkB3R+lGEJui0vh5DFo1GfxXbKSGZ1kKheSoULYwbVs+FXwjWT8hPZkjzJXYsWl198lABJKQAz6tZGZu29typ5ULETAkQz0FcVGXlmS1ITveHhllRH1iVYhOUxQqcp9lkphdxfOWRCAO2dl4LJwuflx83OBD7tXNAwHY9bE=
 notifications:
   email: false
 deploy:
@@ -13,4 +16,4 @@ deploy:
   on:
     tags: true
     repo: TheSavior/find-parent
-    node: '0.12'
+    node: 'node'
