@@ -2,7 +2,6 @@ language: node_js
 script: npm run test-ci
 node_js:
 - node
-- '0.12'
 env:
   global:
     - secure: P2oT12FqZHtp8JNvHqbiU9pJKyR1xgnuBy22d3rPe7752uzwtGQ/ysp83uDhEZNV0o4ty77RXOQkF6wJcazEcxxXmjtJiR5M38HCs3EvWKuMj722HaX7Ap5Iw52MEXdCfeigmOxT5xpuyziv0rWWqMhbgMOTtpFlZXkRNKU+MQS7o+Fxyq0lfZ/xJ88FeEWwOwtovtlG1BD/ofT09ryouiYylYa/8bNocQ25Zmi49uwzDApZgo/yxJP+YOdDTxy+er0VbxXxj0UsEtuMRN04Fl8MHpCvn9SYv0omp4xO8VA2xniN+ZGpW8CRImGf/pk4iI4KxJak4SoPB/TLRbQzyTrNzDavh1e+E733TsYAdMiwCshOATCSK+oBJJ4ZDg61auLdrjeOxfvLwJlEM176fBBYCx3AuMa7/BFg05IvQSz9I6vXwYP1yNX/oW0WLj25jmq/49r4rSSRdXW19X9B+kgaGOWfeBpj/ZpVeToOKvNZVvIwex3inpOTLSoXKVMRK6Z6deiWP6XsJOTM3jkSsSZBCAWxd6MXiyPiptVPsvlhg6uPok0ATcUZWLdyn4+JVP9PXDqYoFBeeY6ePeDD/PZPPntqTfNRkpQIyZoxDMc1p+Ch8SMK+vKreJfxpIWnCGt+17Vv1OQb/CwAndgJObE8K1j59D+fCS5nITNQGiQ=
@@ -17,4 +16,4 @@ deploy:
   on:
     tags: true
     repo: TheSavior/find-parent
-    node: '0.12'
+    node: 'node'
