@@ -1,4 +1,6 @@
 # find-parent
+[![Build Status](https://travis-ci.org/TheSavior/find-parent.svg?branch=master)](https://travis-ci.org/TheSavior/find-parent)
+[![devDependency Status](https://david-dm.org/TheSavior/find-parent/dev-status.svg)](https://david-dm.org/TheSavior/find-parent#info=devDependencies)
 
 Find-parent is a utility to help find the closest parent element that you are looking for.
 
