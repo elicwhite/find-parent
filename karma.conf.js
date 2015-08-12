@@ -1,12 +1,27 @@
 'use strict';
 
-var karmaConfig = require('./karma-core-config');
-
 module.exports = function(config) {
-  config.set(karmaConfig);
-
   config.set({
-    browsers: ['Chrome'],
-    reporters: ['dots']
+    frameworks: ['mocha', 'browserify'],
+
+    files: [
+      'test/src-tests/**/*.js'
+    ],
+
+    preprocessors: {
+      'test/src-tests/**/*.js': ['browserify']
+    },
+
+    singleRun: true,
+
+    logLevel: 'info',
+
+    browserify: {
+      debug: true
+    },
+
+    reporters: ['dots'],
+
+    browsers: ['Chrome', 'Firefox']
   });
 };

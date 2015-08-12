@@ -8,7 +8,7 @@
   ],
   "scripts": {
     "test": "npm run linters && karma start",
-    "test-ci": "npm run linters && karma start karma.conf-ci.js",
+    "test-ci": "npm run linters && karma start --browsers Firefox",
     "linters": "eslint . && jscs ."
   },
   "devDependencies": {
@@ -19,8 +19,8 @@
     "karma-browserify": "4.3.0",
     "karma-chrome-launcher": "0.2.0",
     "karma-cli": "0.1.0",
+    "karma-firefox-launcher": "0.1.6",
     "karma-mocha": "0.2.0",
-    "karma-sauce-launcher": "0.2.14",
     "mocha": "2.2.5",
     "wealthfront-javascript": "2.3.0"
   },
