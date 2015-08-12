@@ -33,7 +33,8 @@ module.exports = function(config) {
 
   config.set({
     sauceLabs: {
-      testName: 'find-parent tests'
+      testName: 'find-parent tests',
+      tunnelIdentifier: process.env.TRAVIS_JOB_NUMBER
     },
 
     customLaunchers: SAUCE_BROWSERS,
