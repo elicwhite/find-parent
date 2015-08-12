@@ -1,0 +1,4 @@
+{
+  "plugins": ["wealthfront-javascript"],
+  "preset": "wealthfront-javascript"
+}

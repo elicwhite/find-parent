@@ -9,7 +9,7 @@ function getJSDomFromSource(source) {
     jsdom.env(
       source,
       [],
-      function (err, window) {
+      function(err, window) {
         if (err) {
           return reject(err);
         } else {
@@ -36,12 +36,12 @@ describe('find-parent/index', function() {
     return promise;
   });
 
-  describe('#byMatcher', function () {
+  describe('#byMatcher', function() {
     it('should return undefined when no parent matches', function() {
       return promise.then(function(window) {
         var element = window.document.getElementsByTagName('a')[0];
 
-        var result = findParent.byMatcher(element, function(node) {
+        var result = findParent.byMatcher(element, function() {
           return false;
         });
 
@@ -53,7 +53,7 @@ describe('find-parent/index', function() {
       return promise.then(function(window) {
         var element = window.document.getElementsByTagName('a')[0];
 
-        var result = findParent.byMatcher(element, function(node) {
+        var result = findParent.byMatcher(element, function() {
           return true;
         });
 
