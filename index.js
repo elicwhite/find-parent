@@ -2,7 +2,7 @@
 
 var FindParent = {
   byMatcher: function(element, func) {
-    if (!element) {
+    if (!element || element === document) {
       return undefined;
     }
 
@@ -11,6 +11,12 @@ var FindParent = {
     }
 
     return this.byMatcher(element.parentNode, func);
+  },
+
+  byClassName: function(element, className) {
+    return this.byMatcher(element, function(el) {
+      return el.classList.contains(className);
+    });
   }
 };
 

@@ -35,3 +35,14 @@ var result = findParent.byMatcher(element, function(node) {
 // result is === to the element <div class="foo">
 ```
 
+### byClassName(element, className)
+
+```
+var findParent = require('find-parent');
+
+var element = document.getElementsByTagName('a')[0];
+
+var result = findParent.byClassName(element, 'foo');
+
+// result is === to the element <div class="foo">
+```
