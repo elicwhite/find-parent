@@ -1,6 +1,6 @@
 {
   "name": "find-parent",
-  "version": "1.0.2",
+  "version": "2.0.0",
   "description": "A utility for finding the nearest parent that matches a test function",
   "main": "index.js",
   "files": [
