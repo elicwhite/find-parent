@@ -15,7 +15,7 @@ $ npm install find-parent --save-dev
 The examples below will use this as an example DOM structure.
 ```
 <div class="foo">
-  <span id="test">
+  <span id="test" data-test-node="test">
     <a href="http://google.com">link text</a>
   </span>
 </div>
@@ -45,4 +45,16 @@ var element = document.getElementsByTagName('a')[0];
 var result = findParent.byClassName(element, 'foo');
 
 // result is === to the element <div class="foo">
+```
+
+### withDataAttribute(element, attName)
+
+```
+var findParent = require('find-parent');
+
+var element = document.getElementsByTagName('a')[0];
+
+var result = findParent.withDataAttribute(element, 'testNode');
+
+// result is === to the element <span id="test" data-test-node="test">
 ```
