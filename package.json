@@ -39,5 +39,8 @@
   "bugs": {
     "url": "https://github.com/TheSavior/find-parent/issues"
   },
-  "homepage": "https://github.com/TheSavior/find-parent#readme"
+  "homepage": "https://github.com/TheSavior/find-parent#readme",
+  "dependencies": {
+    "classlist-polyfill": "^1.0.2"
+  }
 }

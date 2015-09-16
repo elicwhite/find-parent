@@ -1,5 +1,7 @@
 'use strict';
 
+require('classlist-polyfill');
+
 var FindParent = {
   byMatcher: function(element, func) {
     if (!element || element === document) {
