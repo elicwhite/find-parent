@@ -120,6 +120,10 @@ describe('find-parent/index', function() {
   });
 
   describe('#byClassName', function() {
+    beforeEach(function() {
+      element = document.getElementsByTagName('a')[0];
+    });
+
     it('should return undefined if there are no ancestors with className', function() {
       var result = findParent.byClassName(element, 'nonexistant');
 
@@ -129,7 +133,7 @@ describe('find-parent/index', function() {
     it('should return itself when it has className', function() {
       var result = findParent.byClassName(element, 'itself');
 
-      assert.equal(result, element);
+      assert.equal(result.className, 'itself');
     });
 
     it('should return parent with className', function() {
@@ -140,6 +144,44 @@ describe('find-parent/index', function() {
 
     it('should return ancestor with className', function() {
       var result = findParent.byClassName(element, 'ancestor');
+
+      assert.equal(result.className, 'ancestor');
+    });
+  });
+
+  describe('#withDataAttribute', function() {
+    beforeEach(function() {
+      var source = '\
+      <div class="ancestor" data-ancestor-node="1">\
+        <span id="test" class="parent" data-parent-node="2">\
+          <a href="http://google.com" class="itself" data-itself="3">link text</a>\
+        </span>\
+      </div>';
+
+      fixtureDiv.innerHTML = source;
+      element = document.getElementsByTagName('a')[0];
+    });
+
+    it('should return undefined if there are no ancestors with className', function() {
+      var result = findParent.withDataAttribute(element, 'nonExistant');
+
+      assert.isUndefined(result);
+    });
+
+    it('should return itself when it has the data attribute', function() {
+      var result = findParent.withDataAttribute(element, 'itself');
+
+      assert.equal(result.className, 'itself');
+    });
+
+    it('should return parent with data attribute', function() {
+      var result = findParent.withDataAttribute(element, 'parentNode');
+
+      assert.equal(result.className, 'parent');
+    });
+
+    it('should return ancestor with data attribute', function() {
+      var result = findParent.withDataAttribute(element, 'ancestorNode');
 
       assert.equal(result.className, 'ancestor');
     });

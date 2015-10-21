@@ -17,6 +17,12 @@ var FindParent = {
     return this.byMatcher(element, function(el) {
       return el.classList.contains(className);
     });
+  },
+
+  withDataAttribute: function(element, attName) {
+    return this.byMatcher(element, function(el) {
+      return el.dataset.hasOwnProperty(attName);
+    });
   }
 };
 
