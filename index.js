@@ -11,6 +11,10 @@ var FindParent = {
     assert.isObject(opts);
 
     if (!element || element === document) {
+      if (opts.throwOnMiss) {
+        throw new Error('Expected to find parent node, but none was found.');
+      }
+
       return undefined;
     }
 

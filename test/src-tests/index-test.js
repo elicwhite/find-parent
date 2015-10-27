@@ -6,6 +6,12 @@ var findParent = require('../../');
 describe('find-parent/index', function() {
   var fixtureDiv;
   var element;
+  var optsWithThrowOnMiss = {
+    throwOnMiss: true
+  };
+  var optsWithOutThrowOnMiss = {
+    throwOnMiss: false
+  };
 
   function assertHandlesOptions(func) {
     [0, [], ''].forEach(function(invalidOpts) {
@@ -58,6 +64,22 @@ describe('find-parent/index', function() {
         assert.isUndefined(result);
       });
 
+      it('should return undefined when no parent matches and throwOnMiss is false', function() {
+        var result = findParent.byMatcher(element, function() {
+          return false;
+        }, optsWithOutThrowOnMiss);
+
+        assert.isUndefined(result);
+      });
+
+      it('should throw when no parent matches and throwOnMiss is true', function() {
+        assert.throws(function() {
+          findParent.byMatcher(element, function() {
+            return false;
+          }, optsWithThrowOnMiss);
+        }, 'Expected to find parent node, but none was found.');
+      });
+
       it('should return itself when it matches', function() {
         var result = findParent.byMatcher(element, function() {
           return true;
@@ -103,6 +125,22 @@ describe('find-parent/index', function() {
         });
 
         assert.isUndefined(result);
+      });
+
+      it('should return undefined when no parent matches and throwOnMiss is false', function() {
+        var result = findParent.byMatcher(element, function() {
+          return false;
+        }, optsWithOutThrowOnMiss);
+
+        assert.isUndefined(result);
+      });
+
+      it('should throw when no parent matches and throwOnMiss is true', function() {
+        assert.throws(function() {
+          findParent.byMatcher(element, function() {
+            return false;
+          }, optsWithThrowOnMiss);
+        }, 'Expected to find parent node, but none was found.');
       });
 
       it('should return itself when it matches', function() {
