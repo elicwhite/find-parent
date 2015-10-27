@@ -1,7 +1,15 @@
 'use strict';
 
+var assert = require('chai').assert;
+
 var FindParent = {
-  byMatcher: function(element, func) {
+  byMatcher: function(element, func, opts) {
+    if (opts === undefined) {
+      opts = {};
+    }
+
+    assert.isObject(opts);
+
     if (!element || element === document) {
       return undefined;
     }
@@ -10,19 +18,19 @@ var FindParent = {
       return element;
     }
 
-    return this.byMatcher(element.parentNode, func);
+    return this.byMatcher(element.parentNode, func, opts);
   },
 
-  byClassName: function(element, className) {
+  byClassName: function(element, className, opts) {
     return this.byMatcher(element, function(el) {
       return el.classList.contains(className);
-    });
+    }, opts);
   },
 
-  withDataAttribute: function(element, attName) {
+  withDataAttribute: function(element, attName, opts) {
     return this.byMatcher(element, function(el) {
       return el.dataset.hasOwnProperty(attName);
-    });
+    }, opts);
   }
 };
 

@@ -7,6 +7,14 @@ describe('find-parent/index', function() {
   var fixtureDiv;
   var element;
 
+  function assertHandlesOptions(func) {
+    [0, [], ''].forEach(function(invalidOpts) {
+      assert.throws(function() {
+        func.call(func, invalidOpts);
+      }, 'to be an object');
+    });
+  }
+
   before(function() {
     fixtureDiv = document.createElement('div');
     fixtureDiv.className = 'fixture-div';
@@ -36,6 +44,10 @@ describe('find-parent/index', function() {
         element = document.createElement('a');
         parent.appendChild(element);
         ancestor.appendChild(parent);
+      });
+
+      it('should throw if opts is defined and not an object', function() {
+        assertHandlesOptions(findParent.byMatcher.bind(findParent, element, function() {}));
       });
 
       it('should return undefined when no parent matches', function() {
@@ -124,10 +136,26 @@ describe('find-parent/index', function() {
       element = document.getElementsByTagName('a')[0];
     });
 
+    it('should throw if opts is defined and not an object', function() {
+      assertHandlesOptions(findParent.byClassName.bind(findParent, element, 'nonExistant'));
+    });
+
     it('should return undefined if there are no ancestors with className', function() {
       var result = findParent.byClassName(element, 'nonexistant');
 
       assert.isUndefined(result);
+    });
+
+    it('should return undefined if there are no ancestors with className and throwOnMiss is false', function() {
+      var result = findParent.byClassName(element, 'nonexistant', optsWithOutThrowOnMiss);
+
+      assert.isUndefined(result);
+    });
+
+    it('should throw if there are no ancestors with className and throwOnMiss is true', function() {
+      assert.throws(function() {
+        findParent.byClassName(element, 'nonexistant', optsWithThrowOnMiss);
+      }, 'Expected to find parent node, but none was found.');
     });
 
     it('should return itself when it has className', function() {
@@ -162,10 +190,26 @@ describe('find-parent/index', function() {
       element = document.getElementsByTagName('a')[0];
     });
 
+    it('should throw if opts is defined and not an object', function() {
+      assertHandlesOptions(findParent.withDataAttribute.bind(findParent, element, 'nonExistant'));
+    });
+
     it('should return undefined if there are no ancestors with className', function() {
       var result = findParent.withDataAttribute(element, 'nonExistant');
 
       assert.isUndefined(result);
+    });
+
+    it('should return undefined if there are no ancestors with className and throwOnMiss is false', function() {
+      var result = findParent.withDataAttribute(element, 'nonExistant', optsWithOutThrowOnMiss);
+
+      assert.isUndefined(result);
+    });
+
+    it('should throw if there are no ancestors with className and throwOnMiss is true', function() {
+      assert.throws(function() {
+        findParent.withDataAttribute(element, 'nonExistant', optsWithThrowOnMiss);
+      }, 'Expected to find parent node, but none was found.');
     });
 
     it('should return itself when it has the data attribute', function() {
