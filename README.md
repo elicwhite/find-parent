@@ -21,7 +21,7 @@ The examples below will use this as an example DOM structure.
 </div>
 ```
 
-### byMatcher(element, func)
+### byMatcher(element, func, opts)
 
 ```
 var findParent = require('find-parent');
@@ -35,7 +35,7 @@ var result = findParent.byMatcher(element, function(node) {
 // result is === to the element <div class="foo">
 ```
 
-### byClassName(element, className)
+### byClassName(element, className, opts)
 
 ```
 var findParent = require('find-parent');
@@ -47,7 +47,7 @@ var result = findParent.byClassName(element, 'foo');
 // result is === to the element <div class="foo">
 ```
 
-### withDataAttribute(element, attName)
+### withDataAttribute(element, attName, opts)
 
 ```
 var findParent = require('find-parent');
@@ -58,3 +58,11 @@ var result = findParent.withDataAttribute(element, 'testNode');
 
 // result is === to the element <span id="test" data-test-node="test">
 ```
+
+### Options
+
+All findParent functions take an optional `options` argument.
+
+key  | value type | default | description
+------------- | ------------- | ------------- | -------------
+throwOnMiss  | boolean | false | Throw error if no matching parent is found
