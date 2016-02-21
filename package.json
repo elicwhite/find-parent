@@ -12,17 +12,17 @@
     "linters": "eslint . && jscs ."
   },
   "devDependencies": {
-    "chai": "3.2.0",
-    "eslint": "1.1.0",
-    "jscs": "2.1.0",
-    "karma": "0.13.9",
-    "karma-browserify": "4.3.0",
-    "karma-chrome-launcher": "0.2.0",
-    "karma-cli": "0.1.0",
-    "karma-firefox-launcher": "0.1.6",
-    "karma-mocha": "0.2.0",
-    "mocha": "2.2.5",
-    "wealthfront-javascript": "2.3.0"
+    "chai": "3.5.0",
+    "eslint": "2.2.0",
+    "jscs": "2.10.1",
+    "karma": "0.13.21",
+    "karma-browserify": "5.0.1",
+    "karma-chrome-launcher": "0.2.2",
+    "karma-cli": "0.1.2",
+    "karma-firefox-launcher": "0.1.7",
+    "karma-mocha": "0.2.2",
+    "mocha": "2.4.5",
+    "wealthfront-javascript": "2.4.0"
   },
   "repository": {
     "type": "git",
