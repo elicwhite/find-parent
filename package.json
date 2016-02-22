@@ -12,16 +12,18 @@
     "linters": "eslint . && jscs ."
   },
   "devDependencies": {
+    "browserify": "13.0.0",
     "chai": "3.2.0",
     "eslint": "1.1.0",
     "jscs": "2.1.0",
     "karma": "0.13.9",
-    "karma-browserify": "4.3.0",
+    "karma-browserify": "5.0.2",
     "karma-chrome-launcher": "0.2.0",
     "karma-cli": "0.1.0",
     "karma-firefox-launcher": "0.1.6",
     "karma-mocha": "0.2.0",
     "mocha": "2.2.5",
+    "watchify": "3.7.0",
     "wealthfront-javascript": "2.3.0"
   },
   "repository": {
