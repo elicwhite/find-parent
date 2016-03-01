@@ -1,14 +1,14 @@
 'use strict';
 
-var assert = require('chai').assert;
-
 var FindParent = {
   byMatcher: function(element, func, opts) {
     if (opts === undefined) {
       opts = {};
     }
 
-    assert.isObject(opts);
+    if (opts === null || Array.isArray(opts) || typeof opts !== 'object') {
+      throw new Error('Expected opts to be an object.');
+    }
 
     if (!element || element === document) {
       if (opts.throwOnMiss) {
