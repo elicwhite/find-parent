@@ -15,7 +15,7 @@
     "browserify": "^13.0.0",
     "chai": "^3.2.0",
     "eslint": "^2.7.0",
-    "jscs": "^3.0.3",
+    "jscs": "^3.0.5",
     "karma": "^0.13.9",
     "karma-browserify": "^5.0.3",
     "karma-chrome-launcher": "^1.0.1",
