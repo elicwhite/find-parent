@@ -19,7 +19,7 @@
     "karma": "^0.13.9",
     "karma-browserify": "^5.0.3",
     "karma-chrome-launcher": "^1.0.1",
-    "karma-cli": "^1.0.0",
+    "karma-cli": "^1.0.1",
     "karma-firefox-launcher": "^1.0.0",
     "karma-mocha": "^1.0.1",
     "mocha": "^2.2.5",
