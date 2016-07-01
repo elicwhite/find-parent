@@ -14,7 +14,7 @@
   "devDependencies": {
     "browserify": "^13.0.0",
     "chai": "^3.2.0",
-    "eslint": "^2.7.0",
+    "eslint": "^3.0.0",
     "jscs": "^3.0.3",
     "karma": "^0.13.9",
     "karma-browserify": "^5.0.3",
