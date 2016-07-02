@@ -1,7 +1,7 @@
 'use strict';
 
-var FindParent = {
-  byMatcher: function(element, func, opts) {
+const FindParent = {
+  byMatcher(element, func, opts) {
     if (opts === undefined) {
       opts = {};
     }
@@ -25,16 +25,12 @@ var FindParent = {
     return this.byMatcher(element.parentNode, func, opts);
   },
 
-  byClassName: function(element, className, opts) {
-    return this.byMatcher(element, function(el) {
-      return el.classList.contains(className);
-    }, opts);
+  byClassName(element, className, opts) {
+    return this.byMatcher(element, el => el.classList.contains(className), opts);
   },
 
-  withDataAttribute: function(element, attName, opts) {
-    return this.byMatcher(element, function(el) {
-      return el.dataset.hasOwnProperty(attName);
-    }, opts);
+  withDataAttribute(element, attName, opts) {
+    return this.byMatcher(element, el => el.dataset.hasOwnProperty(attName), opts);
   }
 };
 

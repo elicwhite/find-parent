@@ -2,21 +2,24 @@
   "name": "find-parent",
   "version": "2.0.2",
   "description": "A utility for finding the nearest parent that matches a test function",
-  "main": "index.js",
+  "main": "lib/index.js",
   "files": [
-    "index.js"
+    "lib/index.js"
   ],
   "scripts": {
-    "test": "npm run linters && karma start",
-    "test-ci": "npm run linters && karma start --browsers Firefox",
-    "linters": "eslint . && jscs ."
+    "test": "npm run linters && npm run build && karma start",
+    "test-ci": "npm run linters && npm run build && karma start --browsers Firefox",
+    "build": "babel src -d lib",
+    "linters": "eslint *.js src test && jscs *.js src test"
   },
   "devDependencies": {
+    "babel-cli": "^6.10.1",
+    "babel-preset-es2015": "^6.9.0",
     "browserify": "^13.0.0",
     "chai": "^3.2.0",
-    "eslint": "^2.7.0",
+    "eslint": "^3.0.0",
     "jscs": "^3.0.3",
-    "karma": "^0.13.9",
+    "karma": "^1.1.0",
     "karma-browserify": "^5.0.3",
     "karma-chrome-launcher": "^1.0.1",
     "karma-cli": "^1.0.0",
