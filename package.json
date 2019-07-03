@@ -27,7 +27,7 @@
     "karma-mocha": "^1.0.1",
     "mocha": "^3.0.2",
     "watchify": "^3.7.0",
-    "wealthfront-javascript": "^4.0.0"
+    "wealthfront-javascript": "^5.0.1"
   },
   "repository": {
     "type": "git",
